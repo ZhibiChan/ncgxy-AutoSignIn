@@ -17,4 +17,4 @@
     
 ### 使用方法
 
-将python脚本和Microsoft Edge Webdriver放在同一目录，再创建一个名为身份证.txt的文件，在身份证.txt文件中输入你要打卡的人的身份证号，一行一个
+将Microsoft Edge Webdriver放在Python目录(进入cmd)输入` where python`即可查询到，再创建一个名为身份证.txt的文件放在python脚本同目录，在身份证.txt文件中输入你要打卡的人的身份证号，一行一个
