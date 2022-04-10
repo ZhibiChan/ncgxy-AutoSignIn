@@ -29,6 +29,7 @@ for x in range(u):
                 driver.quit()
         except:
             sleep(5)
+            print('网络延迟较高，请手动检查是否成功')
             driver.quit()
         
         
