@@ -4,7 +4,9 @@ from time import sleep
 import linecache
 u=len(open(r"身份证.txt",'rU').readlines())
 for x in range(u):
-    driver = webdriver.Edge("msedgedriver.exe")
+    options = webdriver.EdgeOptions()
+    options.add_argument("headless")
+    driver = webdriver.Edge(options=options)
     driver.get("https://sso.ncgxy.com:9089/login/reg?queryMap.reg_type=stu")
     key=linecache.getline('身份证.txt',x+1)
     driver.find_element_by_id("phone").send_keys(key)
@@ -16,6 +18,7 @@ for x in range(u):
         if d == '我的校园出入电子通行卡':
             driver.quit()
     except:
+
         driver.find_element_by_css_selector("input[value='1'][name='vo.jkStatus']").click()
         driver.find_element_by_css_selector("input[value='2'][name='vo.gl']").click()
         driver.find_element_by_css_selector("input[value='2'][name='vo.jqs']").click()
@@ -29,7 +32,6 @@ for x in range(u):
                 driver.quit()
         except:
             sleep(5)
-            print('网络延迟较高，请手动检查是否成功')
             driver.quit()
         
         
