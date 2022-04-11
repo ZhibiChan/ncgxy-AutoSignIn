@@ -4,6 +4,7 @@ from time import sleep
 import linecache
 u=len(open(r"身份证.txt",'rU').readlines())
 for x in range(u):
+    driver = webdriver.Edge()
     driver.get("https://sso.ncgxy.com:9089/login/reg?queryMap.reg_type=stu")
     key=linecache.getline('身份证.txt',x+1)
     driver.find_element_by_id("phone").send_keys(key)
